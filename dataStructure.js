@@ -9,7 +9,7 @@ const rahul = {
   pets: [
     {
       name: "Max",
-      species: "Golden Retriever",
+      type: "Golden Retriever",
       age: 4,
       fullyVaccinated: true,
       favActivites: ["playing fetch in park"],
@@ -31,7 +31,7 @@ const ananya = {
   pets: [
     {
       name: "Kiwi",
-      species: "Parrot",
+      type: "Parrot",
       age: 0,
       fullyVaccinated: false,
       favActivites: ["knows over 20 phrases", "mimics voice"],
@@ -53,14 +53,14 @@ const ramesh = {
   pets: [
     {
       name: "Bella",
-      species: "Persian cat",
+      type: "Persian cat",
       age: 3,
       fullyVaccinated: true,
       favActivites: ["lounging in the sun"],
     },
     {
       name: "Leo",
-      species: "Persian cat",
+      type: "Persian cat",
       age: 3,
       fullyVaccinated: true,
       favActivites: ["lounging in the sun"],
@@ -82,7 +82,7 @@ const kavya = {
   pets: [
     {
       name: "Snowy",
-      species: "Rabbit",
+      type: "Rabbit",
       age: 2,
       fullyVaccinated: false,
       favActivites: ["hopping around backyard", "nibbling on carrots"],
@@ -117,7 +117,7 @@ const fullyVaccinatedPetsCount = function (people) {
 // console.log(fullyVaccinatedPetsCount(peopleData));
 
 const nameAndTypeOfPet = (pet) => {
-  return { petName: pet.name, petType: pet.species };
+  return { petName: pet.name, petType: pet.type };
 };
 
 const namesAndTypesOfPets = function (people) {
@@ -223,10 +223,10 @@ const peopleCountWithMultipleHobbies = function (people) {
 
 const findPetCount = function (table, pet) {
   let row = table.find(function (row) {
-    return row.species === pet.species;
+    return row.type === pet.type;
   });
 
-  row = row || { species: pet.species, count: 0 };
+  row = row || { type: pet.type, count: 0 };
 
   if (row.count === 0) {
     table.push(row);
@@ -239,7 +239,7 @@ const findPetCount = function (table, pet) {
 const mostCommonPet = (pet1, pet2) => (pet1.count > pet2.count ? pet1 : pet2);
 
 const mostCommonPetType = function (people) {
-  return people.flatMap(getPets).reduce(findPetCount, []).reduce(mostCommonPet).species;
+  return people.flatMap(getPets).reduce(findPetCount, []).reduce(mostCommonPet).type;
 };
 // console.log(mostCommonPetType(peopleData));
 
