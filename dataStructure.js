@@ -239,8 +239,7 @@ const findPetCount = function (table, pet) {
 const mostCommonPet = (pet1, pet2) => (pet1.count > pet2.count ? pet1 : pet2);
 
 const mostCommonPetType = function (people) {
-  return people.flatMap(getPets).reduce(findPetCount, []).reduce(mostCommonPet)
-    .species;
+  return people.flatMap(getPets).reduce(findPetCount, []).reduce(mostCommonPet).species;
 };
 // console.log(mostCommonPetType(peopleData));
 
